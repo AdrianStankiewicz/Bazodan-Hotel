@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    background: #1D1F20;
+}
+
+.box {
+    float: left;
+    width: 33.33%;
+    color: white;
+    font-weight: bold;
+    height: 10vh;
+    background-color: gray;
+    text-align: center;
+    padding: 2.5vh;
+}
+  
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+header{
+    width: 100%;
+    height: 75px;
+}
+
+.contact{
+    padding: 0 5px;
+    float: right;
+    font-size: 5vh;
+}
+
+.guziczek{
+    background-color: white;
+    color: #1D1F20;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.contact:hover{ transform: scale(1.03); }
+.contact:active{ transform: scale(.98); }
+
+div a{
+    height: 7vh;
+    text-align: center;
+    line-height: auto;
+    position: relative;
+    font-weight: bold;
+}
+
+div a:hover{ color: gold; transition: all ease-in-out 250ms; }
+div a:hover::before{ color: gold; width: 90%; }
+div a::before{ content: ''; display: block; height: 2px; background-color: gold; position: absolute; width: 0%; transition: all ease-in-out 250ms; top: -2px; }
+
+.vertical-menu {
+    border-radius: 5px;
+    width: 200px;
+    max-height: 90vh;
+    width: 40vh;
+    overflow: auto;
+    border: 2vh solid #1D1F20;
+    font-size: 2vh;
+}
+  
+.vertical-menu a {
+    background-color: gray;
+    color: white;
+    display: block;
+    padding: 2vh;
+    text-decoration: none;
+    border: 1px solid #1D1F20;
+}
+  
+.vertical-menu a.active {
+    color: white;
+}
+
+.name{
+    background-color: gray;
+    color: white;
+    width: 100%;
+    font-size: 4vh;
+    text-align: center;
+}
+
+#czyWolneContainer{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+#anim{
+    position: absolute;
+    width: 100%;
+    margin: auto;
+}
+
+input{
+    font-size: 2rem;
+    height: 5vh;
+    width: 484px;
+    padding: 5px;
+    margin-top: 20vh;
+}
+
+#wolnePokojeWynik{
+    margin: auto;
+    margin-top: 9vh;
+    width: 70%;
+    height: 60vh;
+    background-color: #1D1F20;
+}
+
+#anim button{
+    padding: 10px;
+}

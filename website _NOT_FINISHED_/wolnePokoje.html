@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+
+	<title>Hotel Chłodnia CRM</title>
+	
+	<!--Favicon Pingwinek-->
+	<link rel="icon" href="includes/favicon.ico" type="image/x-icon"/>
+
+	<!--CSS Nasz-->
+	<link rel="stylesheet" type="text/css" href="includes/style.css">
+
+	<!--Font Google Patrick Hand-->
+	<link href="https://fonts.go-ogleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+	<!--CSS do kalendarza-->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+
+	<!--SKRYPTY jQuery do kalendarza-->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+	<!--SKRYPTY JavaScript nasze-->
+	<script src="includes/script.js"></script>
+
+	<!--Nasze Polskie znaki-->
+	<meta charset="utf-8">
+	
+</head>
+
+<!--Wczytujemy zegarek-->
+<BODY ONLOAD="zegarekHeader()">
+
+<!--Szary pasek menu-->
+<div class="clearfix">
+	<div class="box" id="txt">
+
+	</div>
+
+	<div class="box">
+		HOTEL CHŁODNIA
+	</div>
+
+	<div class="box">
+			<button class="guziczek contact" onClick="window.location.href='index.html'"> MENU </button>
+	</div>
+
+	<div class="name">SPRAWDZENIE CZY ISTNIEJĄ WOLNE POKOJE</div>
+</div>
+
+<!--INPUT okresu-->
+<div id="czyWolneContainer">
+	<div id="anim">
+
+	<input type="text" id="range" name="daterange" value="1"/>
+	<button style="padding: 10px" class="guziczek" onclick="myMove()">Try it</button>
+
+	</div>
+</div>
+
+<!--Kod wywołania kalendarzyka-->
+<script>
+
+var x=0;
+
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+  	opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  }); 
+});
+
+</script>
+
+<div id="wolnePokojeWynik">
+
+	<form action="includes/Platnosc.inc.php" method="POST">
+		<input type="text" name="kwota" placeholder="kwota"><br>
+		<input type="text" name="sposob" placeholder="sposób"><br>
+		<button type="submit" name="submit">Dodaj płatność</button>
+	</form>
+
+</div>
+
+<!--<form action="includes/Platnosc.inc.php" method="POST">
+	<input type="text" name="przyjazd" placeholder="Data początku rezerwacji"><br>
+	<input type="text" name="wyjazd" placeholder="Data zakończenia rezerwacji"><br>
+	<button class="button" type="submit" name="submit">Sprawdź wolne pokoje</button>
+	</form>-->
+
+</body>
+</html>
